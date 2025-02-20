@@ -75,4 +75,22 @@ public class Main {
         double alturaDegrau = alturaAndares / quantidadeDegraus;
         System.out.println("A altura de cada degrau é: " + alturaDegrau + " metros");
     }
+
+    /*Uma pessoa deseja pregar um quadro em uma parede, utilizando uma escada como apoio.
+    Construa um programa para calcular e mostrar a que distância a escada deve estar da parede.
+    O usuário deve fornecer o tamanho da escada e a altura em que deseja pregar o quadro.
+    Lembre-se, porém, que o tamanho da escada precisa ser maior que a altura que se deseja alcançar.
+     */
+
+    public static void calculateDistance() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe o tamanho da escada: ");
+        double tamanhoEscada = scanner.nextDouble();
+        System.out.println("Informe a altura em que deseja pregar o quadro: ");
+        double alturaQuadro = scanner.nextDouble();
+        scanner.close();
+        double distancia = Math.sqrt(Math.pow(tamanhoEscada, 2) - Math.pow(alturaQuadro, 2));
+        System.out.println("A distancia que a escada deve estar da parede é: " + distancia);
+    }
+
 }
