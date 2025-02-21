@@ -1,13 +1,13 @@
 import java.math.BigInteger;
 import java.util.Scanner;
+import java.util.Calendar;
 
 public class Main {
     public static void main(String[] args) {
         int ano = 2025;
         System.out.println("Hello world!");
         System.out.println("Hello " + ano + "!");
-        // solicita inpout do usuario para calcular o fatorial
-        readInput();
+        calendarius();
     }
 
     public static BigInteger factorial(int n) {
@@ -93,4 +93,123 @@ public class Main {
         System.out.println("A distancia que a escada deve estar da parede é: " + distancia);
     }
 
+    //Uso do calendário
+
+    public static void calendarius() {
+        Calendar calendario = Calendar.getInstance();
+        int dia = calendario.get(Calendar.DAY_OF_MONTH);
+        System.out.println("Hoje é dia: " + dia);
+    }
+
+    /*Construir um programa que apresente uma mensagem para o usuário informando se ele pode votar, dependendo da idade que tem.  Considerar que
+    a) Até 15 anos não vota
+    b) Entre 16 e 17 é opcional
+    c) Entre 18 e 70 é obrigatório
+    d) Acima de 70 é opcional
+    */
+
+    public static void votar() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe a sua idade: ");
+        int idade = scanner.nextInt();
+        scanner.close();
+        if (idade <= 15) {
+            System.out.println("Você não pode votar");
+        } else if (idade >= 16 && idade <= 17) {
+            System.out.println("Você pode votar, mas é opcional");
+        } else if (idade >= 18 && idade <= 70) {
+            System.out.println("Você é obrigado a votar");
+        } else {
+            System.out.println("Você pode votar, mas é opcional");
+        }
+    }
+
+    /*Construir um programa que determine a data cronologicamente maior (posterior) entre duas datas informadas pelo usuário.  Cada data deve ser composta por dia mes e ano.
+     */
+
+    public static void maiorData() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe o dia da primeira data: ");
+        int dia1 = scanner.nextInt();
+        System.out.println("Informe o mês da primeira data: ");
+        int mes1 = scanner.nextInt();
+        System.out.println("Informe o ano da primeira data: ");
+        int ano1 = scanner.nextInt();
+        System.out.println("Informe o dia da segunda data: ");
+        int dia2 = scanner.nextInt();
+        System.out.println("Informe o mês da segunda data: ");
+        int mes2 = scanner.nextInt();
+        System.out.println("Informe o ano da segunda data: ");
+        int ano2 = scanner.nextInt();
+        scanner.close();
+        if (ano1 > ano2) {
+            System.out.println("A primeira data é maior");
+        } else if (ano1 < ano2) {
+            System.out.println("A segunda data é maior");
+        } else {
+            if (mes1 > mes2) {
+                System.out.println("A primeira data é maior");
+            } else if (mes1 < mes2) {
+                System.out.println("A segunda data é maior");
+            } else {
+                if (dia1 > dia2) {
+                    System.out.println("A primeira data é maior");
+                } else if (dia1 < dia2) {
+                    System.out.println("A segunda data é maior");
+                } else {
+                    System.out.println("As datas são iguais");
+                }
+            }
+        }
+
+        /*Construir um programa que obtenha a data do sistema e mostra essa informação com o nome do mês por extenso, usando switch.
+        Utilizar o exemplo abaixo, que utiliza a classe Calendar, como base e faz a captura do dia do mês:
+         */
+
+        Calendar calendario = Calendar.getInstance();
+        int mes = calendario.get(Calendar.MONTH);
+        switch (mes) {
+            case 0:
+                System.out.println("Janeiro");
+                break;
+            case 1:
+                System.out.println("Fevereiro");
+                break;
+            case 2:
+                System.out.println("Março");
+                break;
+            case 3:
+                System.out.println("Abril");
+                break;
+            case 4:
+                System.out.println("Maio");
+                break;
+            case 5:
+                System.out.println("Junho");
+                break;
+            case 6:
+                System.out.println("Julho");
+                break;
+            case 7:
+                System.out.println("Agosto");
+                break;
+            case 8:
+                System.out.println("Setembro");
+                break;
+            case 9:
+                System.out.println("Outubro");
+                break;
+            case 10:
+                System.out.println("Novembro");
+                break;
+            case 11:
+                System.out.println("Dezembro");
+                break;
+        }
+
+
+
 }
+}
+
+
